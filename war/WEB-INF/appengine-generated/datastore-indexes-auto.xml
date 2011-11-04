@@ -1,0 +1,11 @@
+<!-- Indices written at Fri, 4 Nov 2011 06:34:18 UTC -->
+
+<datastore-indexes>
+
+    <!-- Used 38 times in query history -->
+    <datastore-index kind="FileInfo" ancestor="false" source="auto">
+        <property name="author" direction="asc"/>
+        <property name="date" direction="desc"/>
+    </datastore-index>
+
+</datastore-indexes>

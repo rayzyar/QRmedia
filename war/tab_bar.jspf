@@ -1,0 +1,43 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ page import="java.util.List"%>
+<%@ page import="javax.jdo.Query"%>
+
+<%@ page import="com.google.appengine.api.users.User"%>
+<%@ page import="com.google.appengine.api.users.UserService"%>
+<%@ page import="com.google.appengine.api.users.UserServiceFactory"%>
+<%@ page import="com.google.appengine.api.datastore.KeyFactory"%>
+<%@ page import="javax.jdo.PersistenceManager"%>
+
+<%@ page import="com.fyp.qrmedia.PMF"%>
+<%@ page import="com.fyp.qrmedia.FileInfo"%>
+<%@ page import="com.fyp.qrmedia.AuthorProfile"%>
+
+<%
+UserService userService = UserServiceFactory.getUserService();
+User user = userService.getCurrentUser();
+if(user != null) {
+	AuthorProfile ap = null;
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		try {
+			ap = pm.getObjectById(AuthorProfile.class, user.getEmail());
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+	String cp = request.getParameter("cp");
+	if((ap == null)&&(cp == null)) {
+		response.sendRedirect("/createProfile.jsp?cp=true");
+	} else {
+%>
+<div id="tab_bar_div">		
+<div id="logo_div"><a herf="/index.jsp"><img id="logo" src="/resources/web_app_logo.png"/></a></div>
+		<ul id="tab_bar">
+		<li><a href="/index.jsp">My&nbsp&nbspUploads</a></li>
+		<li><a href="/upload.jsp">Upload&nbsp&nbspInfo</a></li>
+		<li><a href="/myProfile.jsp">My&nbsp&nbspProfile</a></li>
+		<li><a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">&nbspSign&nbsp&nbspOut&nbsp</a></li>
+		</ul>
+</div>
+<div class="user_name" style="font-size:14px;text-align:left;position:relative;width:670px;left:10px;">
+Welcome,<strong><a href="/myProfile.jsp"><%=user.getEmail()%></a></strong>
+</div>
+<div id="contents">

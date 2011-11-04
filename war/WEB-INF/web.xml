@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>Upload</servlet-name>
+		<servlet-class>com.fyp.qrmedia.UploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Upload</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Delete</servlet-name>
+		<servlet-class>com.fyp.qrmedia.DeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Delete</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Serve</servlet-name>
+		<servlet-class>com.fyp.qrmedia.ServeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Serve</servlet-name>
+		<url-pattern>/serve</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Android</servlet-name>
+		<servlet-class>com.fyp.qrmedia.AndroidServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Android</servlet-name>
+		<url-pattern>/android</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LoadComment</servlet-name>
+		<servlet-class>com.fyp.qrmedia.LoadCommentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoadComment</servlet-name>
+		<url-pattern>/loadcomment</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>CreateProfile</servlet-name>
+		<servlet-class>com.fyp.qrmedia.CreateProfileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateProfile</servlet-name>
+		<url-pattern>/createprofile</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ManageSubscribers</servlet-name>
+		<servlet-class>com.fyp.qrmedia.ManageSubscribersServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ManageSubscribers</servlet-name>
+		<url-pattern>/managesubscribers</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ServeProfile</servlet-name>
+		<servlet-class>com.fyp.qrmedia.ServeProfileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServeProfile</servlet-name>
+		<url-pattern>/serveprofile</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ClearIPList</servlet-name>
+		<url-pattern>/ClearIPList</url-pattern>
+	</servlet-mapping>	
+	<servlet>
+		<servlet-name>ClearIPList</servlet-name>
+		<servlet-class>com.fyp.qrmedia.ClearIPListServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Subscribe</servlet-name>
+		<servlet-class>com.fyp.qrmedia.SubscribeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Subscribe</servlet-name>
+		<url-pattern>/subscribe</url-pattern>
+	</servlet-mapping>
+
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
